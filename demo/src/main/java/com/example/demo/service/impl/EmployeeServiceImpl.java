@@ -61,4 +61,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println(employeeDto.getFirstName() + " " + employeeDto.getLastName() + " " + employeeDto.getEmail());
         return EmployeeMapper.mapToEmployeeDto(savedEmployee);
     }
+
+    @Override
+    public EmployeeDto deleteEmployeeById(Long employeeId)
+    {
+        Employee deleteEmployee = employeeRepository.findById(employeeId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Employee is not found with id" + employeeId));
+        employeeRepository.delete(deleteEmployee);
+        return EmployeeMapper.mapToEmployeeDto(deleteEmployee);
+    }
 }
