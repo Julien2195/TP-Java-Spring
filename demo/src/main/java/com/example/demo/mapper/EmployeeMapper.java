@@ -13,6 +13,7 @@ public class EmployeeMapper {
                 employee.getEmail()
         );
     }
+
     public static Employee mapToEmployee(EmployeeDto employeeDto) {
         Employee employee = new Employee();
         employee.setId(employeeDto.getId());
