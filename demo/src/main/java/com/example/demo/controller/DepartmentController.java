@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin("*")
 @RestController
 @AllArgsConstructor
@@ -27,5 +29,12 @@ public class DepartmentController {
     {
         DepartmentDto getDepartment = departmentService.getDepartmentById(id);
         return new ResponseEntity<>(getDepartment, HttpStatus.OK);
+    }
+
+    @GetMapping("departments")
+    public ResponseEntity<List<DepartmentDto>> getAllDepartments()
+    {
+        List<DepartmentDto> departmentDto = departmentService.getAllDepartments();
+        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
     }
 }

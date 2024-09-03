@@ -9,6 +9,9 @@ import com.example.demo.service.DepartmentService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 
@@ -30,4 +33,14 @@ public class DepartmentServiceImpl implements DepartmentService {
         return DepartmentMapper.mapToDepartmentDto(department);
     }
 
+    @Override
+    public List<DepartmentDto> getAllDepartments() {
+        List<Department> departments = departmentRepository.findAll();
+        List<DepartmentDto> departmentDtos = new ArrayList<>();
+        for (Department department : departments) {
+            DepartmentDto departmentDto = DepartmentMapper.mapToDepartmentDto(department);
+            departmentDtos.add(departmentDto);
+        }
+        return departmentDtos;
+    }
 }
