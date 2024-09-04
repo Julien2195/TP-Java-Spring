@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-    @Getter
+import java.math.BigInteger;
+
+@Getter
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
@@ -14,4 +16,5 @@ import lombok.Setter;
         private String firstName;
         private String lastName;
         private String email;
+        private Long departmentId;
 }
