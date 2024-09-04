@@ -41,7 +41,7 @@ const FormAddDepartment = () => {
                     <input 
                         type="text" 
                         className="form-control" 
-                        id="departmentName"
+                        id="departmentDescription"
                         value={departmentDescription}
                         onChange={((e) => {setDepartmentDescription(e.target.value)})}
                     />
