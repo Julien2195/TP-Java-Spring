@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import UpdateDepartment from './routes/UpdateDepartment';
 import AdddDepartment from './routes/AddDepartmenent';
+import Employees from './components/Employees/Employees';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "update-department/:id",
     element: <UpdateDepartment />
+  },
+  {
+    path: 'employee',
+    element: <Employees />
   }
 ]);
 

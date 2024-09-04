@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 
+import com.example.demo.dto.EmployeeDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,4 +27,9 @@ public class Employee {
 
     @Column(name = "email_id", nullable = false, unique = true)
     private String email;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name= "department_id", nullable = false)
+    private Department department;
+
 }
