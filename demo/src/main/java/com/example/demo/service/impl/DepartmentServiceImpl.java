@@ -22,6 +22,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
         Department department = DepartmentMapper.mapToDepartment(departmentDto);
         Department savedDepartment = departmentRepository.save(department);
+        System.out.println(department);
         return DepartmentMapper.mapToDepartmentDto(savedDepartment);
     }
 
@@ -50,8 +51,8 @@ public class DepartmentServiceImpl implements DepartmentService {
                 orElseThrow(() ->
                         new ResourceNotFoundException("Not department found with id: " + id));
 
-        updatedDepartmentDto.setDepartment_number(departmentDto.getDepartment_number());
-        updatedDepartmentDto.setName(departmentDto.getName());
+        updatedDepartmentDto.setDepartment_name(departmentDto.getDepartmentName());
+        updatedDepartmentDto.setDepartment_description(departmentDto.getDepartmentDescription());
         Department department =  departmentRepository.save(updatedDepartmentDto);
         return DepartmentMapper.mapToDepartmentDto(department);
     }
