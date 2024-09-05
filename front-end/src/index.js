@@ -9,8 +9,9 @@ import {
 } from "react-router-dom";
 import UpdateDepartment from './routes/UpdateDepartment';
 import AdddDepartment from './routes/AddDepartmenent';
-import Employees from './components/Employees/Employees';
-
+import Employees from './routes/Employee';
+import AddEmployee from './routes/AddEmployee';
+import UpdateEmployee from './routes/UpdateEmployee';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,8 +26,16 @@ const router = createBrowserRouter([
     element: <UpdateDepartment />
   },
   {
+    path: 'add-employee',
+    element: <AddEmployee />
+  },
+  {
     path: 'employee',
     element: <Employees />
+  },
+  {
+    path: 'update-employee/:id',
+    element: <UpdateEmployee />
   }
 ]);
 

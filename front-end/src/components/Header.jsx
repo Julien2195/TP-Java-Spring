@@ -13,10 +13,10 @@ const Header = () => {
         <a className="nav-link" href="#">Employee Management System</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" onClick={() => {navigate('./employee')}}>Employees</a>
+        <a className="nav-link" onClick={() => {navigate('/employee')}}>Employees</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Departments</a>
+        <a className="nav-link" onClick={() => {navigate('/department')}}>Departments</a>
       </li>
     </ul>
   </div>

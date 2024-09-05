@@ -30,7 +30,7 @@ const Employees = () => {
     return (
         <div>
             <h2 className="text-center">List of Employees</h2>
-            <button type="button" className="btn btn-primary" onClick={() => {navigate('./add-employee')}}>Add Employee</button>
+            <button type="button" className="btn btn-primary" onClick={() => {navigate('/add-employee')}}>Add Employee</button>
 
             <table className="table">
                 <thead>
@@ -50,7 +50,7 @@ const Employees = () => {
                             <td>{employee.lastName}</td>
                             <td>{employee.email}</td>
                             <td>
-                                <button type="button" className="btn btn-info me-3" onClick={() => {navigate(`./update-employee/${employee.id}`)}}>Update</button>
+                                <button type="button" className="btn btn-info me-3" onClick={() => {navigate(`/update-employee/${employee.id}`)}}>Update</button>
                                 <button type="button" className="btn btn-danger" onClick={() => {handleDelete(employee.id)}}>Delete</button>
                             </td>
                         </tr>
