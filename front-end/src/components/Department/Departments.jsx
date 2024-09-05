@@ -30,7 +30,7 @@ const Departments = () => {
     return (
         <div>
             <h2 className="text-center">List of Departments</h2>
-            <button type="button" className="btn btn-primary" onClick={() => {navigate('./add-department')}}>Add Department</button>
+            <button type="button" className="btn btn-primary" onClick={() => {navigate('/add-department')}}>Add Department</button>
 
             <table className="table">
                 <thead>
